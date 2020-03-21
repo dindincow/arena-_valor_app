@@ -1,0 +1,110 @@
+  {
+            path: '/',
+            name: 'main',
+            component: Main,
+            children:[
+                //分類
+                {
+                    path: '/categories/create',
+                    name: 'categoryCreate',
+                    component: CategoryEdit,
+                },
+                {
+                    path: '/categories/list',
+                    name: 'categoryList',
+                    component: CategoryList,
+                },
+                {
+                    path: '/categories/edit/:id',
+                    name: 'categoryEdit',
+                    component: CategoryEdit,
+                    props: true //可把 url 參數注入到  CategoryEdit 裡面
+                },
+            
+                // 物品
+                {
+                    path: '/items/create',
+                    name: 'itemCreate',
+                    component: ItemEdit,
+                }, {
+                    path: '/items/list',
+                    name: 'itemList',
+                    component: ItemList,
+                }, {
+                    path: '/items/edit/:id',
+                    name: 'itemEdit',
+                    component: ItemEdit,
+                    props: true //可把 url 參數注入到  CategoryEdit 裡面
+                },
+                // 英雄
+                {
+                    path: '/heroes/create',
+                    name: 'heroesCreate',
+                    component: HeroseEdit,
+                },
+                {
+                    path: '/heroes/edit/:id',
+                    name: 'heroesEdit',
+                    component: HeroseEdit,
+                    props: true //可把 url 參數注入到  CategoryEdit 裡面
+                },
+                {
+                    path: '/heroes/list',
+                    name: 'heroesList',
+                    component: HeroseList,
+                },
+                // 文章
+                {
+                    path: '/articles/create',
+                    name: 'articleCreate',
+                    component: ArticleEdit,
+                },
+                {
+                    path: '/articles/edit/:id',
+                    name: 'articleEdit',
+                    component: ArticleEdit,
+                    props: true //可把 url 參數注入到  CategoryEdit 裡面
+                },
+                {
+                    path: '/articles/list',
+                    name: 'articleList',
+                    component: ArticleList,
+                },
+                // 廣告
+                {
+                    path: '/ads/create',
+                    name: 'adsCreate',
+                    component: AdsEdit,
+                },
+                {
+                    path: '/ads/edit/:id',
+                    name: 'adsEdit',
+                    component: AdsEdit,
+                    props: true //可把 url 參數注入到  CategoryEdit 裡面
+                },
+                {
+                    path: '/ads/list',
+                    name: 'adsList',
+                    component: AdsList,
+                },
+                 // 管理員
+                {
+                    path: '/admin_users/create',
+                    name: 'adminUsersCreate',
+                    component: AdminUserEdit,
+                },
+                {
+                    path: '/admin_users/edit/:id',
+                    name: 'adminUsersEdit',
+                    component: AdminUserEdit,
+                    props: true //可把 url 參數注入到  CategoryEdit 裡面
+                },
+                {
+                    path: '/admin_users/list',
+                    name: 'adminUsersList',
+                    component: AdminUserList,
+                }
+
+            ]
+        },
+    

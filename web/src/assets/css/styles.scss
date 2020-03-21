@@ -1,0 +1,241 @@
+@import './_variables.scss';
+
+
+
+// reset
+* {
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    margin: 0;
+    line-height: 1.2em;
+    background: #020715;
+    font-family: arial,"Microsoft JhengHei","微軟正黑體",sans-serif !important;  
+}
+
+p,h1,h2,h3,h4,h5,h6{
+    font-family: arial,"Microsoft JhengHei","微軟正黑體",sans-serif !important;  
+}
+
+a {
+    color: #dfdfdf;
+}
+
+img{
+    width:100%;
+}
+
+// color
+@each $colorKey, $color in $colors {
+    .text-#{$colorKey} {
+        color: $color
+    }
+} 
+
+@each $colorKey, $color in $colors {
+    .bg-#{$colorKey} {
+        background-color: $color
+    }
+}    
+
+
+// text-algin
+@each $var in (left, center, right) {
+    .text-#{$var} {
+        text-align: $var
+    }
+}
+
+// font-size
+@each $sizeKey, $size in $font-sizes {
+    .fs-#{$sizeKey} {
+        font-size: $size * $base-font-size
+    }
+}
+
+// flex
+.d-flex{
+    display: flex;
+}
+.flex-column{
+    flex-direction: column;
+}
+
+.flex-wrap{
+    flex-wrap: wrap;
+}
+
+@each $key, $value in $flex-jc {
+    .jc-#{$key} {
+        justify-content: $value
+    }
+}
+
+$flex-ai:(
+    start:flex-start,
+    end:flex-end,
+    center:center,
+    stretch:stretch
+ 
+);
+
+@each $key, $value in $flex-ai {
+    .ai-#{$key} {
+       
+        align-items: $value
+    }
+}
+
+.flex-1{
+    flex:1;
+}
+
+.flex-grow-1{
+    flex-grow:1;
+}
+
+
+// m-0, mx-0
+@each $typeKey, $type in $spacing-types {
+    // .m-1
+    @each $sizeKey, $size in $spacing-sizes {
+        .#{$typeKey}-#{$sizeKey} {
+            #{$type}: $size * $spacing-base-size;
+        }
+    }
+    // .mx-1 , .my-1
+    @each $sizeKey, $size in $spacing-sizes {
+        .#{$typeKey}x-#{$sizeKey} {
+            #{$type}-left: $size * $spacing-base-size;
+            #{$type}-right: $size * $spacing-base-size;
+        }
+        .#{$typeKey}y-#{$sizeKey} {
+            #{$type}-top: $size * $spacing-base-size;
+            #{$type}-bottom: $size * $spacing-base-size;
+        }
+    }
+    // .mt-1
+    @each $directionKey, $direction in $spacing-directions {
+        @each $sizeKey, $size in $spacing-sizes {
+            .#{$typeKey}#{$directionKey}-#{$sizeKey} {
+                #{$type}-#{$direction}: $size * $spacing-base-size;
+            }
+        }
+    }
+}
+.ml-auto{
+    margin-left: auto;
+}
+
+.mr-auto{
+    margin-right: auto;
+}
+
+
+
+
+// btn
+.btn{
+    border: none;
+    border-radius: 0.1rem;
+    font-size: .857143rem;
+    padding: 0.4rem 0.8rem;
+}
+
+// nav
+
+.nav{
+    display: flex;
+    .nav-item{
+        border-bottom: 3px solid transparent;
+        padding-bottom: 0.2rem;
+        font-weight: bold;
+
+        &.active{
+            color:map-get($colors,'primary');
+            border-bottom: 3px solid map-get($colors,'primary');
+        }
+    }
+    &.nav-inverse{
+        .nav-item{
+            color:map-get($colors,'white');
+            &.active{
+                border-bottom: 3px solid map-get($colors,'white');
+            }
+        }
+    }
+}
+
+.w-100{
+    width: 100%;
+}
+
+.h-100{
+    height: 100%;
+}
+
+// sprite
+
+.sprite{
+    background: url(../imgs/index.png) no-repeat 0 0;
+    background-size: 26.785714rem;
+    display: inline-block;
+    &.sprite-news{
+        width: 1.642857rem;
+        height: 1.428571rem;
+        background-position: 63.546% 15.517%;
+    }
+
+    &.sprite-story{
+        width: 1.642857rem;
+        height: 1.428571rem;
+        background-position: 36.467% 15.287%;
+    }
+}
+
+//  text-ellipse
+
+.text-ellipse{
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.lh-1{
+    line-height:1.5rem;
+}
+
+
+// infoCard
+.infoCard{
+    padding: 1.2rem 1.5rem;
+    background: #020a1d;
+    border: 1px solid #2630;
+
+    .infoCard-title{
+        padding: 0.5rem;
+        color: #ead99f;
+        background-color: #372e54;
+    }
+    p{
+        color: #d4d9de;
+        line-height: 1.442857rem;
+    }
+}
+ 
+
+
+
+
+
+
+
+
